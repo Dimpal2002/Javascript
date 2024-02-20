@@ -1,0 +1,539 @@
+(1) What is JavaScript Output method?
+-------------------------------------
+
+(i)Using innerHTML
+(ii)Using document.write()
+(iii)Using window.alert()
+(iv)Using console.log()
+(v)Using window.prompt()
+(vi)Using appendChild()
+
+	(i)Using innerHTML:-
+	--------------------
+		It is used to access an element. It defines the HTML content.
+
+		Syntax:
+		document.getElementById("id").innerHTML;
+
+	(ii)Using document.write():-
+        ----------------------------
+		It is used for testing purpose.
+
+		Syntax:
+		document.write();
+
+	(iii)Using window.alert():-
+        ---------------------------
+		It displays the content using an alert box. 
+
+		Syntax:
+		window.alert();
+
+	(iv)Using console.log():-
+        -------------------------
+		It is used for debugging purposes.
+
+		Syntax:
+		console.log();
+
+	(v)Using window.prompt():-
+	--------------------------
+		It Allows to take input from user.
+
+		Syntax:
+		window.prompt();
+
+	(vi)Using appendChild():-
+	-------------------------
+		This method allows you to append content to an HTML element.
+
+		Syntax:
+		element.appendChild(node);
+
+___________________________________________________________________________________________________________________________________________________
+
+(2)How to used JavaScript Output method?
+----------------------------------------
+
+	(i)Using innerHTML:-
+	--------------------
+		It is used to access an element. It defines the HTML content.
+
+	<!DOCTYPE html>
+	<html>
+	<body>
+
+	<p id="demo"></p>
+
+	<script>
+	document.getElementById("demo").innerHTML = 5 + 6;
+	</script>
+
+	</body>
+	</html> 
+
+
+	(ii)Using document.write():-
+        ----------------------------
+		It is used for testing purpose.
+
+	<!DOCTYPE html>
+	<html>
+	<body>
+
+	<h2>My First Web Page</h2>
+	<p>My first paragraph.</p>
+
+	<p>Never call document.write after the document has finished loading.It will overwrite the whole document.</p>
+	
+	<script>
+		document.write(5 + 6);
+	</script>
+
+	</body>
+	</html>
+
+	(iii)Using window.alert():-
+        ---------------------------
+		It displays the content using an alert box.
+
+	<!DOCTYPE html>
+	<html>
+	<body>
+
+	<script>
+	window.alert(5 + 6);
+	</script>
+
+	</body>
+	</html> 
+
+	(iv)Using console.log():-
+        -------------------------
+		It is used for debugging purposes.
+
+	<!DOCTYPE html>
+	<html>
+	<body>
+
+	<p>Then select "Console" in the debugger menu.</p>
+
+	<script>
+	console.log(5 + 6);
+	</script>
+
+	</body>
+	</html> 
+
+	(v)Using window.prompt():-
+        --------------------------
+		It Allows to take input from user.
+
+	<!DOCTYPE html>
+	<html>
+	<body>
+
+	<button onclick="fun()">try it</button>
+
+	<p id="demo">para</p>
+	<script>
+
+	function fun(){
+	let h = prompt("enter your name","Dimpal patel");
+    
+   	if(h!=null){
+    	document.getElementById("demo").innerHTML = h;
+    	}
+    	}
+    
+	</script>
+
+	</body>
+	</html>
+
+	(vi)Using appendChild():-
+        -------------------------
+		This method allows you to append content to an HTML element.
+
+	<!DOCTYPE html>
+	<html>
+	<body>
+	<h1>The Element Object</h1>
+	<h2>The appendChild() Method</h2>
+
+	<ul id="myList">
+  		<li>Coffee</li>
+  		<li>Tea</li>
+	</ul>
+
+	<p>Click "Append" to append an item to the end of the list:</p>
+
+	<button onclick="myFunction()">Append</button>
+
+	<script>
+	function myFunction() {
+	const node = document.createElement("li");
+	const textnode = document.createTextNode("Water");
+	node.appendChild(textnode);
+	document.getElementById("myList").appendChild(node);
+	}
+	</script>
+
+	</body>
+	</html>
+
+
+	(vii)using window.print():-
+        --------------------------
+		you can call the window.print() method in the browser to print the content of the current window.
+
+	<!DOCTYPE html>
+	<html>
+	<body>
+
+	<h2>The window.print() Method</h2>
+
+	<p>Click the button to print the current page.</p>
+
+	<button onclick="window.print()">Print this page</button>
+
+	</body>
+	</html>
+
+___________________________________________________________________________________________________________________________________________________
+
+(3)How to used JavaScript Events to do all examples? 
+----------------------------------------------------
+
+* Mouse events:
+  -------------
+	(1)onclick:- When mouse click on an element
+	-----------
+
+	<html>  
+	<head> Javascript Events </head>  
+	<body>  
+
+	<form>  
+		<input type="button" onclick="clickevent()" value="Who's this?"/>  
+	</form>
+	<script>   
+   	 	function clickevent()  
+		{  
+        		document.write("This is JavaTpoint");  
+    		}  
+      
+	</script>  
+  	</body>  
+	</html>  	
+
+	(2)onmouseover:- When the cursor of the mouse comes over the element
+	---------------
+
+	<html>
+	<head> 
+	</head>
+	<body>
+		<p onmouseover="mouseoverevent()"> Keep cursor over me</p>
+	<script>
+	function mouseoverevent()
+	{
+		alert("This is JavaTpoint");
+	}
+	</script>
+
+	</body>
+	</html>
+
+	(3)onmouseout:- When the cursor of the mouse leaves an element
+	--------------
+
+	<html>
+	<head></head>
+	<body>
+	<p onmouseout="mouseout()"> Keep cursor over me</p>
+	<script>
+	function mouseout()
+	{
+		alert("This is JavaTpoint");
+	}	
+	</script>
+	
+	</body>
+	</html>
+	
+	(4)onmousedown:- When the mouse button is pressed over the element
+
+	(5)onmouseup:- When the mouse button is released over the element
+
+	(4) & (5) onmousedown & onmouseup
+	---------------------------------
+
+	<!DOCTYPE html>
+	<html>
+	<body>
+	<h2>The onmousedown Event</h2>
+
+	<p id="myP" onmousedown="mouseDown()" onmouseup="mouseUp()">
+	The mouseDown() function sets the color of this text to red.
+	The mouseUp() function sets the color of this text to blue.
+	</p>
+
+	<script>
+	function mouseDown() {
+  		document.getElementById("myP").style.color = "red";
+	}
+
+	function mouseUp() {
+  		document.getElementById("myP").style.color = "blue";
+	}
+	</script>
+	</body>
+	</html>
+
+	(6)onmousemove:- When the mouse movement takes place.
+	---------------
+	<html>
+   	<body>
+      	<span onmousemove = "sayHello()">This is demo text for mousemove event.</span>
+
+      	<script>
+        function sayHello() {
+           alert("Mouse Move")
+        }
+  	</script>
+   	</body>
+	</html>
+
+
+# Keyboard events:
+------------------
+	(1) onkeydown Event
+	-------------------
+
+	* Description:-
+	  Call a function when the user presses a key:
+
+	<!DOCTYPE html>
+	<html>
+	<body>
+	<h2>The onkeydown Event</h2>
+
+	<p>Press a key in the input field:</p>
+
+	<input type="text" onkeydown="myFunction()">
+
+	<p id="demo"></p>
+
+	<script>
+	function myFunction() {
+  		document.getElementById("demo").innerHTML = "You pressed a key inside the input field";
+	}
+	</script>
+
+	</body>
+	</html>
+
+	(2) onkeyup Event
+	-----------------
+
+	* Description:-
+	  Call a function when the user releases a key:
+
+	<!DOCTYPE html>
+	<html>
+	<body>
+	<h2>The keyup Event</h2>
+
+	<p>A function is triggered when the user releases a key in the input field.</p>
+	<p>The function transforms the input field to upper case:</p>
+
+	Enter your name: <input type="text" id="fname" onkeyup="myFunction()">
+
+	<script>
+	function myFunction() {
+  		let x = document.getElementById("fname");
+  		x.value = x.value.toUpperCase();
+	}
+	</script>
+
+	</body>
+	</html>
+
+	(3)onkeypress Event
+	-------------------
+
+	* Description:-
+	  Call a function when the user presses a key:
+
+	<!DOCTYPE html>
+	<html>
+	<body>
+	<h2>The onkeypress Event</h2>
+	<p>A function is triggered when the user is pressing a key in the input field.</p>
+
+	<input type="text" onkeypress="myFunction()">
+
+	<script>
+	function myFunction() {
+  		alert("You pressed a key inside the input field");
+	}
+	</script>
+
+	</body>
+	</html>
+
+
+#Form events:
+-------------
+	(1)onfocus
+	----------
+
+	* Description:- 
+	  When the user focuses on an element
+
+	<html>
+	<body>
+	<h2>Enter something here</h2>
+	<input type="text" id="input1" onfocus="focusevent()"/>
+	<script>
+	function focusevent()
+	{
+		document.getElementById("input1").style.background=" aqua";
+	}
+	</script>
+	</body>
+	</html>
+
+	(2)onsubmit
+	-----------
+	
+	* Description:- 
+	  When the user submits the form
+
+	<!DOCTYPE html>
+	<html>
+	<body>
+
+	<p>When you submit the form, a function is triggered which alerts some text.</p>
+
+	<form onsubmit="myFunction()">
+  	Enter name: <input type="text" name="fname">
+  	<input type="submit" value="Submit">
+	</form>
+
+	<script>
+	function myFunction() {
+  		alert("The form was submitted");
+	}
+	</script>
+
+	</body>
+	</html>
+
+	(3)onblur
+	---------
+	
+	* Description:- 
+	  When the focus is away from a form element
+
+	Ex.When you leave the input field, a function is triggered which transforms the input text to upper case.
+	<!DOCTYPE html>
+	<html>
+	<body>
+	<h2>The blur Event</h2>
+
+	Enter your name: <input type="text" id="fname" onblur="myFunction()">
+
+	<script>
+	function myFunction() {
+  	let x = document.getElementById("fname");
+  	x.value = x.value.toUpperCase();
+	}
+	</script>
+
+	</body>
+	</html>
+
+	(4)onchange
+	-----------
+
+	* Description:-
+	  When the user modifies or changes the value of a form element
+
+	<!DOCTYPE html>
+	<html>
+	<body>
+	<h2>The focus Event</h2>
+
+	Enter your name: <input type="text" onfocus="myFunction(this)">
+
+	<p>When the input field gets focus, a function changes the background-color.</p>
+
+	<script>
+	function myFunction(x) {
+  	x.style.background = "yellow";
+	}
+	</script>
+
+	</body>
+	</html>
+
+#Window/Document events
+-----------------------
+	(1) onload
+	----------
+
+	#Description:-
+	When the browser finishes the loading of the page
+
+	<html>
+	<body onload="window.alert('Page successfully loaded');">
+	<script>
+	document.write("The page is loaded successfully");
+	</script>
+	</body>
+	</html>
+
+	(2)onunload
+	-----------
+
+	#Description:-
+	When the visitor leaves the current webpage, the browser unloads it
+
+	<!DOCTYPE html>
+	<html>
+   	<body onunload="newFunc()">
+      	<p>Close the page and see what happens!</p>
+      	<p>This event may give unexpected results.</p>
+      	<script>
+         function newFunc() {
+            alert("Thank you!");
+         }
+      	</script>
+   	</body>
+	</html>
+	
+	
+	(3)onresize
+	-----------
+
+	#Description:-
+	When the visitor resizes the window of the browser
+
+	<!DOCTYPE html>
+	<html>
+   	<head>  
+   	</head>
+   	<body onresize="resizeFunction()">
+      	<p>Resize browser window and check the window (browser window) height and width again.</p>
+      	<p id = "test"> </p>
+
+      	<script>
+        function resizeFunction() {
+           var val = "Window Width=" + window.outerWidth + ", Window Height=" + window.outerHeight;
+           document.getElementById("test").innerHTML = val;
+        }
+     	</script>
+   	</body>
+	</html>

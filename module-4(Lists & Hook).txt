@@ -1,0 +1,155 @@
+Module – 4 Lists and Hooks
+---------------------------
+
+Question : Explain Life cycle in Class Component and functional component with Hooks
+------------------------------------------------------------------------------------ 
+
+Answer : 
+          React Lifecycle Methods in Class Components:-
+	 ----------------------------------------------
+
+1.constructor(props)
+Called when the component is initialized.
+
+2.componentDidMount()
+Called after the component is mounted (inserted into the DOM).
+
+3.componentDidUpdate(prevProps, prevState)
+Called after the component updates.
+
+4.componentWillUnmount()
+Called before the component is unmounted and destroyed.
+
+5.shouldComponentUpdate(nextProps, nextState)
+Called before rendering when new props or state are received, allows for optimization by preventing unnecessary renders.
+
+6.getDerivedStateFromProps(nextProps, prevState)
+Called when the component is created, and whenever new props are received.
+
+7.getSnapshotBeforeUpdate(prevProps, prevState)
+Called right before the most recent render, allows you to capture some information from the DOM before it updates.
+
+Example:-
+---------
+import React, { Component } from 'react';
+
+class MyClassComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  componentDidMount() {
+    console.log('Component mounted');
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('Component updated');
+  }
+
+  componentWillUnmount() {
+    console.log('Component will unmount');
+  }
+
+  render() {
+    return (
+      <div>
+        <p>{this.state.count}</p>
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+          Increment
+        </button>
+      </div>
+    );
+  }
+}
+
+
+          React Lifecycle in Functional Components with Hook:-
+          ----------------------------------------------------
+
+     => Lifecycle of a React component:-
+        -------------------------------
+
+       
+1.componentDidMount()
+---------------------
+
+->Executes after the component is mounted (inserted into the DOM).
+->Functional Equivalent: useEffect with an empty dependency array.
+
+	import React, { useEffect } from 'react';
+
+	function MyComponent() {
+  		useEffect(() => {
+    	// componentDidMount logic here
+    	console.log('Component mounted');
+  	}, []);  
+	}
+
+2.componentDidUpdate(prevProps, prevState)
+------------------------------------------
+
+->Executes after the component updates.
+->Functional Equivalent: useEffect with dependencies.
+
+	import React, { useEffect, useState } from 'react';
+
+	function MyComponent() {
+  	const [count, setCount] = useState(0);
+
+  	useEffect(() => {
+    	// componentDidUpdate logic here
+    		console.log('Component updated');
+  	}, [count]);
+	}
+
+3.componentWillUnmount()
+------------------------
+
+->Executes before the component is unmounted and destroyed.
+->Functional Equivalent: useEffect with a cleanup function.
+
+	import React, { useEffect } from 'react';
+
+	function MyComponent() {
+  		useEffect(() => {
+    	// componentDidMount logic here
+    	console.log('Component mounted');
+	// componentWillUnmount logic here
+    	return () => {
+      		console.log('Component will unmount');
+    	};
+  }, []);
+}
+
+4.shouldComponentUpdate(nextProps, nextState)
+---------------------------------------------
+
+->Allows you to optimize rendering by preventing unnecessary updates.
+->Functional Equivalent: React.memo for component and useMemo and useCallback for values and functions.
+
+	import React, { useMemo } from 'react';
+
+	const MemoizedComponent = React.memo(function MyComponent(props) {
+ 	 // Render logic
+	});
+
+	function ParentComponent() {
+  	const someValue = useMemo(() => {
+    	// some calculation
+    	return calculatedValue;
+  	}, [dependency]);
+
+  	const someFunction = useCallback(() => {
+    	// function logic
+  	}, [dependency]);
+
+  	return <MemoizedComponent value={someValue} onClick={someFunction} />;
+}
+	
+5.getDerivedStateFromProps(nextProps, prevState) and getSnapshotBeforeUpdate(prevProps, prevState)
+--------------------------------------------------------------------------------------------------
+
+These lifecycle methods are less commonly used and often replaced with derived state or refs in functional components.

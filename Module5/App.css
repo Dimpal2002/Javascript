@@ -1,0 +1,10 @@
+@import url('https://fonts.googleopis.com/css2?family=Italiana&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{margin: 0px;padding: 0px;box-sizing: border-box;}
+body{font-family: 'Roboto',sans-serif;}
+.container-fluid{padding: 0px 35px;}
+
+.cursor{cursor: pointer;}
+.bg-g,.bg-success{background: #3bb77e !important;}
+.text-g{color: #3bb77e;}
+.hd {font-size: 38px;font-weight: 600;}

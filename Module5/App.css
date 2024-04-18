@@ -8,3 +8,20 @@ body{font-family: 'Roboto',sans-serif;}
 .bg-g,.bg-success{background: #3bb77e !important;}
 .text-g{color: #3bb77e;}
 .hd {font-size: 38px;font-weight: 600;}
+
+.head{
+    display: flex;
+    list-style-type: none;
+}
+li{
+    padding-left: 20px;
+}
+header{
+    display: flex;
+}
+p{
+    margin-left: 400px;
+}
+.head1{
+    margin-left: 300px;
+}

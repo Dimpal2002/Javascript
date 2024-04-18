@@ -9,6 +9,27 @@ import About from './pages/About/index';
 function App() {
   return (
     <div>
+      <header>
+        <ul className='head'>
+          <li>About Us</li>
+          <li>|</li>
+          <li>My Account</li>
+          <li>|</li>
+          <li>Wishlist</li>
+          <li>|</li>
+          <li>Order Tracking</li>
+        </ul>
+        <p>Get great devices up to 50% off View details</p>
+        <ul className='head head1'>
+          <li>Need help?Call Us:+ 1800 900</li>
+          <li>|</li>
+          <li>English</li>
+          <li>|</li>
+          <li>USD</li>
+        </ul>
+      </header>
+      <hr></hr>
+      
       <BrowserRouter>
       <Header/>
       <Routes>

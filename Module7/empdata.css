@@ -1,0 +1,27 @@
+.container {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-evenly;
+  }
+  
+  .container input {
+    margin-right: 50px; /* Add right margin to the input */
+    justify-content: flex-start;
+  }
+  
+  .link {
+    margin-left: 50px; /* Add left margin to the link */
+    justify-content: flex-end;
+  }
+  
+  .search{
+    margin-left: 315px;
+    justify-content: flex-start;
+  }
+
+  .inp{
+    display: inline;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-start;
+  }

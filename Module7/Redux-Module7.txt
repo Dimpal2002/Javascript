@@ -1,0 +1,80 @@
+(1)What is Redux?
+->Redux is an open-source JavaScript library for managing and centralizing application state. 
+->It is most commonly used with libraries such as React or Angular for building user interfaces. 
+->Similar to (and inspired by) Facebook's Flux architecture, it was created by Dan Abramov and Andrew Clark.
+->Since mid-2016, the primary maintainers are Mark Erikson and Tim Dorr.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+(2)What is Redux Thunk used for?
+->Redux Thunk is like a co-worker for Redux, giving it the power to handle asynchronous actions.
+->It’s that extra tool that allows your Redux store to deal with things like fetching data from a server or performing tasks that take some time. 
+->With Redux Thunk, your app can smoothly manage both synchronous and asynchronous operations.
+->Redux Thunk is like a reliable assistant for Redux, the manager of your app’s data.
+->Imagine it as the go-to helper for handling tasks that take some time, such as checking stock in an online store. It ensures your app runs smoothly, managing both quick and more complex actions without slowing down the show.
+->In this real-life scenario, Redux Thunk allows Redux to smoothly manage the asynchronous task of checking stock without freezing the entire operation.
+->It’s like having an efficient assistant that can handle both quick tasks and more time-consuming ones, ensuring your online store runs seamlessly.
+
+(1)Handling Asynchronous Actions: 
+Redux Thunk allows you to handle asynchronous actions in Redux. Without middleware like Thunk, Redux only supports synchronous actions, which means you can't directly dispatch async operations like data fetching or API calls
+
+(2)Simplifying Async Logic:
+Thunk simplifies the process of managing asynchronous logic by providing a standardized way to structure async actions. It encapsulates the logic for handling asynchronous operations within action creators, keeping your components cleaner and more focused
+
+(3)Dispatching Multiple Actions: 
+Thunk enables action creators to dispatch multiple actions. For example, you might dispatch an action to indicate the start of an async operation, then dispatch another action with the fetched data once it's available, and finally dispatch an action to handle any errors
+
+(4)Integration with Redux DevTools:
+Redux DevTools, a powerful debugging tool for Redux applications, seamlessly integrates with Thunk, allowing you to inspect the flow of async actions and state changes in your application.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+(3)What is Pure Component? When to use Pure Component over Component? 
+
+ If we extend a class with Pure Component, there is no need for the shouldComponentUpdate() lifecycle method. ReactJS Pure Component Class compares the current state and props with new props and states to decide whether the React component should re-render itself or not.
+
+import React from "react";
+
+export default class Test extends React.PureComponent {
+    render() {
+        return <h1>Welcome to GeeksforGeeks</h1>;
+    }
+}
+
+->When to use Pure Component over Component?
+  ------------------------------------------
+
+1. Performance Optimization: 
+	Pure Components are particularly useful in scenarios where performance optimization is crucial. They automatically implement a shallow comparison of props and state, preventing unnecessary re-renders if the data hasn't changed. This can significantly improve rendering performance, especially in applications with complex UIs or large numbers of components.
+
+2. Immutable Data:
+	 Pure Components work well with immutable data structures. If your component's props and state are immutable or rarely change, using Pure Components ensures that only components with actual changes in data will re-render. This can lead to more efficient rendering, especially in applications with data that doesn't mutate frequently.
+
+3. Simple Props and State: 
+	Pure Components are most effective when your component's props and state are simple and don't have deeply nested objects or complex data structures. Since they perform shallow comparisons, they work best when changes to props or state can be detected with a simple equality check.
+
+4. Avoiding Manual Optimization: 
+	Using Pure Components can save you from manually implementing the shouldComponentUpdate() method for performance optimization. React handles the comparison logic internally for Pure Components, reducing the need for manual optimization and making your code cleaner and more maintainable.
+
+5. Development Efficiency: 
+	Pure Components can improve development efficiency by simplifying the optimization process and reducing the cognitive load of manually optimizing components. Developers can focus more on building features and less on optimizing individual components for performance.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+(3) What is the second argument that can optionally be passed tosetState and what is its purpose?
+-------------------------------------------------------------------------------------------------
+	
+1. Partial State Object (required): 
+	The first argument to setState() is a partial state object containing one or more key-value pairs representing the state properties that you want to update. This argument is required.
+
+2. Callback Function (optional):
+	The second argument to setState() is an optional callback function that will be invoked once the state has been updated and the component has been re-rendered. This callback function is typically used to perform actions that depend on the updated state, such as making additional changes or triggering side effects.
+
+-> example of using the setState() function with both arguments:
+-------------------------------------------------------------
+
+	this.setState({ 
+  	counter: this.state.counter + 1 
+	}, () => {
+  	console.log('State updated:', this.state.counter);
+	});
